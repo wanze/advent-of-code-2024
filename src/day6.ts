@@ -91,7 +91,7 @@ function turnRight(direction: Direction): Direction {
 
 function parse(input: string): { map: Tile[][], start: Position, direction: Direction } {
   const map: Tile[][] = []
-  const rows = input.split('\n')
+  const rows = input.split('\n').filter(Boolean)
   let start: Position | null = null
   for (let y = 0; y < rows.length; y++) {
     const row = rows[y].trim().split('')
