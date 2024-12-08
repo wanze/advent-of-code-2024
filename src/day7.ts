@@ -20,22 +20,22 @@ export function day7Part1() {
   function isValidEquation(equation: Equation) {
     const results: number[] = []
     const [o, ...operands] = equation.operands
-    calc(o, operands)
+
+    calcRecursive(o, operands)
 
     return results.includes(equation.result)
 
-    function calc(result: number, operands: number[]) {
-      if (operands.length === 1) {
-        results.push(result * operands[0])
-        results.push(result + operands[0])
-        return
-      }
-
-      const remainingOperands = operands.slice(1)
+    function calcRecursive(result: number, operands: number[]) {
       const r1 = result * operands[0]
-      calc(r1, remainingOperands)
       const r2 = result + operands[0]
-      calc(r2, remainingOperands)
+
+      if (operands.length === 1) {
+        results.push(r1, r2)
+      } else {
+        const remainingOperands = operands.slice(1)
+        calcRecursive(r1, remainingOperands)
+        calcRecursive(r2, remainingOperands)
+      }
     }
   }
 }
@@ -55,25 +55,24 @@ export function day7Part2() {
   function isValidEquation(equation: Equation) {
     const results: number[] = []
     const [o, ...operands] = equation.operands
-    calc(o, operands)
+
+    calcRecursive(o, operands)
 
     return results.includes(equation.result)
 
-    function calc(result: number, operands: number[]) {
-      if (operands.length === 1) {
-        results.push(result * operands[0])
-        results.push(result + operands[0])
-        results.push(concat(result, operands[0]))
-        return
-      }
-
-      const remainingOperands = operands.slice(1)
+    function calcRecursive(result: number, operands: number[]) {
       const r1 = result * operands[0]
-      calc(r1, remainingOperands)
       const r2 = result + operands[0]
-      calc(r2, remainingOperands)
       const r3 = concat(result, operands[0])
-      calc(r3, remainingOperands)
+
+      if (operands.length === 1) {
+        results.push(r1, r2, r3)
+      } else {
+        const remainingOperands = operands.slice(1)
+        calcRecursive(r1, remainingOperands)
+        calcRecursive(r2, remainingOperands)
+        calcRecursive(r3, remainingOperands)
+      }
     }
 
     function concat(a: number, b: number) {
