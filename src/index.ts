@@ -1,4 +1,5 @@
 import { day1Part1, day1Part2 } from "./day1"
+import { day10Part1, day10Part2 } from "./day10"
 import { day2Part1, day2Part2 } from "./day2"
 import { day3Part1, day3Part2 } from "./day3"
 import { day4Part1, day4Part2 } from "./day4"
@@ -37,4 +38,8 @@ console.log(day8Part2())
 
 console.log('\nDay9')
 console.log(day9Part1())
-// console.log(day8Part2())
+// console.log(day9Part2())
+
+console.log('\nDay10')
+console.log(day10Part1())
+console.log(day10Part2())
