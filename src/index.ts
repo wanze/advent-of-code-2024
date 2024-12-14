@@ -1,4 +1,3 @@
-import { day13Part1 } from "./day13"
 
 // console.log('Day1')
 // console.log(day1Part1())
@@ -40,4 +39,6 @@ import { day13Part1 } from "./day13"
 // console.log(day11Part1())
 // console.log(day11Part2())
 
-console.log(day13Part1())
+// console.log(day13Part1())
+// console.log(day14Part1())
+// console.log(day14Part2())
