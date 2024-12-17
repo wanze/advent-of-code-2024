@@ -3,6 +3,8 @@
 // console.log(day1Part1())
 // console.log(day1Part2())
 
+import { day15Part1 } from "./day15";
+
 // console.log('\nDay2')
 // console.log(day2Part1())
 // console.log(day2Part2())
@@ -42,3 +44,5 @@
 // console.log(day13Part1())
 // console.log(day14Part1())
 // console.log(day14Part2())
+
+console.log(day15Part1())
